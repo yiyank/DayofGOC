@@ -17,8 +17,7 @@
         app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.284"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.284" />
 
     <TextView
         android:id="@+id/firstpagetext1"
@@ -27,6 +26,7 @@
         android:text="@string/presented_by_dayof_x"
         android:textColor="#102346"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +40,7 @@
         android:text="@string/tauber_institute_for_global_operations"
         android:textColor="#102346"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

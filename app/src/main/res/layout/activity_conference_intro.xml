@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConferenceIntro">
+    android:fillViewport="true">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:padding="6dp"
+        android:text="The Tauber Institute for Global Operations hosts the must-attend operations event of the year — Taubers’ Global Operations Conference, GOC. The combination of global leaders in industry with top-ranked business and engineering faculty, GOC reflects the unparalleled resources the Tauber Institute offers today and symbolizes our unwavering commitment to the next generation of Operations leaders. Here’s what a past attendee had to say: The Tauber Global Operations Conference was a aksjhdkjahsdjkajhsdkjsahdjkahsdjhka"    />
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Dayof GOC</string>
     <string name="presented_by_dayof_x">Presented by Dayof x</string>
-    <string name="todo">TODO</string>
     <string name="tauber_institute_for_global_operations">Tauber Institute for Global Operations</string>
+    <string name="welcome_to_the_global_operations_conference_2018">Welcome to the Global Operations Conference 2018!</string>
 </resources>
