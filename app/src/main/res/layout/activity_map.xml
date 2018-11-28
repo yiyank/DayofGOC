@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".Map">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="366dp"
+        android:layout_height="292dp"
+        android:src="@drawable/rosscampusmap_Page_1"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <TextView
+        android:id="@+id/textViewRossMap"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="Ross School of Business Map"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="23dp" />
+
+    <TextView
+        android:id="@+id/textViewAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Address: 701 Tappan Ave, Ann Arbor, MI 48109"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="352dp" />
+
 </android.support.constraint.ConstraintLayout>
