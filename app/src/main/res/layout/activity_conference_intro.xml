@@ -1,23 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textview"
-            android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:padding="6dp"
-        android:text="The Tauber Institute for Global Operations hosts the must-attend operations event of the year — Taubers’ Global Operations Conference, GOC. The combination of global leaders in industry with top-ranked business and engineering faculty, GOC reflects the unparalleled resources the Tauber Institute offers today and symbolizes our unwavering commitment to the next generation of Operations leaders. Here’s what a past attendee had to say: The Tauber Global Operations Conference was a aksjhdkjahsdjkajhsdkjsahdjkahsdjhka"    />
+    tools:context=".ConferenceIntro">
 
 
-    </LinearLayout>
-</ScrollView>
+    <ScrollView
+        android:layout_width="354dp"
+        android:layout_height="484dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="350dp"
+                android:layout_height="247dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/conferenceintroimage" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Welcome to the Global Operations Conference 2018!"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="0dp"
+                android:text="The Tauber Institute for Global Operations hosts the must attend operations event of the year — Taubers’ Global Operations Conference, GOC.
+
+            The combination of global leaders in industry with top-ranked business and engineering faculty, GOC reflects the unparalleled resources the Tauber Institute offers today and symbolizes our unwavering commitment to the next generation of Operations leaders.
+
+            Here’s what a past attendee had to say:
+
+            “The Tauber Global Operations Conference was a great experience to expand my understanding of how recent business and technology trends are impacting the operations and strategy of several major global companies. Also, it was a unique opportunity to expand my network and meet a very diverse and talented group of professionals that work across a wide range of global companies and industries.” - Jose Gomez, UCLA
+
+            Experience two days where you will:
+
+            Learn from award winning faculty from both the College of Engineering and the Stephen M. Ross School of Business as well as leading experts in operations today.
+            Discover forward-thinking panels discussing real world strategies implemented to maximize and transform operations.
+            Hear dynamic speakers and well respected industry experts.
+            Network with leading, emerging and future operations leaders" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

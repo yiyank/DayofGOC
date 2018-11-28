@@ -22,7 +22,8 @@ public class FirstPage extends Activity {
         return super.onCreateOptionsMenu(menu);
     }
 
-
+    //Delete menu
+    //Add time to automatically go to the login page
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
