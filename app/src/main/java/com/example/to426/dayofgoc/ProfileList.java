@@ -3,17 +3,44 @@ package com.example.to426.dayofgoc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class ProfileList extends Activity {
 
+    private ArrayList<Attendees> GOCAttendees;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_list);
+        initEvents();
     }
+
+
+    private void initEvents() {
+        GOCAttendees = new ArrayList<>();
+
+        GOCAttendees.add(new Attendees("Name 1","Organization 1","Industry 1","Email 1","Linkedin 1"));
+        GOCAttendees.add(new Attendees("Name 2","Organization 2","Industry 2","Email 2","Linkedin 1"));
+        GOCAttendees.add(new Attendees("Name 3","Organization 3","Industry 3","Email 3","Linkedin 1"));
+        GOCAttendees.add(new Attendees("Name 4","Organization 4","Industry 4","Email 4","Linkedin 1"));
+
+        initRecyclerView();
+    }
+
+    private void initRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.rvattendee);
+        RecyclerViewAttendee rv = new RecyclerViewAttendee(GOCAttendees, this);
+        recyclerView.setAdapter(rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
