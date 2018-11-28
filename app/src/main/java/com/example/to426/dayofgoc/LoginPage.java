@@ -10,4 +10,6 @@ public class LoginPage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
     }
+
+
 }
