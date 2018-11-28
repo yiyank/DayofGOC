@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuconference"
+        android:title="Conference Intro" />
+    <item
+        android:id="@+id/menumap"
+        android:title="Map" />
+    <item
+        android:id="@+id/menuprofilelist"
+        android:title="SmartProfile" />
+    <item
+        android:id="@+id/menuschedule"
+        android:title="Schedule"/>
+    <item
+        android:id="@+id/menusurvey"
+        android:title="Survey" />
+</menu>
