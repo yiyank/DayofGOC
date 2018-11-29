@@ -75,6 +75,9 @@ public class Schedule extends Activity {
                 Intent go5 = new Intent(this, SurveyPage.class);
                 this.startActivity(go5);
                 return true;
+            case R.id.menulogout:
+                Intent go6 = new Intent(this,LoginPage.class);
+                this.startActivity(go6);
 
             default:
                 return false;

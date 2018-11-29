@@ -8,28 +8,65 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class ProfileList extends Activity {
 
     private ArrayList<Attendees> GOCAttendees;
+    private Button updateProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_list);
         initEvents();
+
+        updateProfile = findViewById(R.id.updateProfile);
+        updateProfile.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent update = new Intent(ProfileList.this,UpdateProfile.class);
+                startActivity(update);
+            }
+        });
+
     }
 
 
     private void initEvents() {
         GOCAttendees = new ArrayList<>();
 
-        GOCAttendees.add(new Attendees("Name 1","Organization 1","Industry 1","Email 1","Linkedin 1"));
-        GOCAttendees.add(new Attendees("Name 2","Organization 2","Industry 2","Email 2","Linkedin 1"));
-        GOCAttendees.add(new Attendees("Name 3","Organization 3","Industry 3","Email 3","Linkedin 1"));
-        GOCAttendees.add(new Attendees("Name 4","Organization 4","Industry 4","Email 4","Linkedin 1"));
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference();
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()) {
 
+                    //String ue = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+                    String post1 = uniqueKeySnapshot.child("Name").getValue(String.class);
+                    String post2 = uniqueKeySnapshot.child("Organization").getValue(String.class);
+                    String post3 = uniqueKeySnapshot.child("Industry").getValue(String.class);
+                    String post4 = uniqueKeySnapshot.child("Email").getValue(String.class);
+                    String post5 = uniqueKeySnapshot.child("Linkedin").getValue(String.class);
+                    GOCAttendees.add(new Attendees(post1,post2,post3,post4,post5));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         initRecyclerView();
     }
 
@@ -73,6 +110,9 @@ public class ProfileList extends Activity {
                 Intent go5 = new Intent(this, SurveyPage.class);
                 this.startActivity(go5);
                 return true;
+            case R.id.menulogout:
+                Intent go6 = new Intent(this,LoginPage.class);
+                this.startActivity(go6);
 
             default:
                 return false;

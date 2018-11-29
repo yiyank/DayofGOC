@@ -22,7 +22,9 @@
         <activity android:name=".Map" />
         <activity android:name=".SurveyPage" />
         <activity android:name=".ProfileList" />
-        <activity android:name=".SmartProfile"></activity>
+        <activity android:name=".SmartProfile" />
+        <activity android:name=".Register" />
+        <activity android:name=".UpdateProfile"></activity>
     </application>
 
 </manifest>

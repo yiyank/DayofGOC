@@ -100,8 +100,10 @@ public class LoginPage extends Activity {
                 }
                 else if(task.isSuccessful()) {
                     Toast.makeText(LoginPage.this,"Register Successful",Toast.LENGTH_SHORT).show();
+                    Intent intentRegister = new Intent(LoginPage.this, Register.class);
+                    startActivity(intentRegister);}
                 }
-            }
+
 
         });
     }

@@ -9,6 +9,20 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvattendee"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="385dp"
+        android:layout_height="463dp" />
+
+    <Button
+        android:id="@+id/updateProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
+        android:layout_marginBottom="8dp"
+        android:text="Update your Profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
