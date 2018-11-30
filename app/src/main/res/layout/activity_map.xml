@@ -14,7 +14,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:layout_marginBottom="22dp"
-        android:src="@drawable/rosscampusmap_Page_1"
+        android:src="@drawable/rosscampusmap"
         app:layout_constraintBottom_toTopOf="@+id/textViewAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

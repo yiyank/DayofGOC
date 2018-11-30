@@ -3,17 +3,46 @@ package com.example.to426.dayofgoc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class Schedule extends Activity {
 
+    private ArrayList<Events> GOCEvents;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
+
+        initEvents();
     }
+
+    private void initEvents() {
+        GOCEvents = new ArrayList<>();
+
+        GOCEvents.add(new Events("Event 1","Location 1","Time 1","Speaker 1","Description 1"));
+        GOCEvents.add(new Events("Event 2","Location 2","Time 2","Speaker 2","Description 2"));
+        GOCEvents.add(new Events("Event 3","Location 3","Time 3","Speaker 3","Description 3"));
+        GOCEvents.add(new Events("Event 4","Location 4","Time 4","Speaker 4","Description 4"));
+
+
+
+        initRecyclerView();
+    }
+
+    private void initRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.rvschedule);
+        RecyclerViewSchedule rv = new RecyclerViewSchedule(GOCEvents, this);
+        recyclerView.setAdapter(rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -46,6 +75,9 @@ public class Schedule extends Activity {
                 Intent go5 = new Intent(this, SurveyPage.class);
                 this.startActivity(go5);
                 return true;
+            case R.id.menulogout:
+                Intent go6 = new Intent(this,LoginPage.class);
+                this.startActivity(go6);
 
             default:
                 return false;

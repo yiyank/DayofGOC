@@ -7,6 +7,7 @@ public class Attendees {
     String Email;
     String Linkedin;
 
+
     public Attendees(){
 
     }
@@ -15,7 +16,7 @@ public class Attendees {
         this.Name = name;
         this.Organization = organization;
         this.Industry = industry;
-        this.Email = email;
         this.Linkedin = linkedin;
+        this.Email = email;
     }
 }

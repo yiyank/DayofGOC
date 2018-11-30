@@ -17,4 +17,7 @@
     <item
         android:id="@+id/menusurvey"
         android:title="Survey" />
+    <item
+        android:id="@+id/menulogout"
+        android:title="Log Me Out" />
 </menu>
