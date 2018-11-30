@@ -40,6 +40,7 @@
                 android:layout_marginTop="6dp"
                 android:gravity="center"
                 android:text="Welcome to the Global Operations Conference 2018!"
+                android:textStyle="bold"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
 
