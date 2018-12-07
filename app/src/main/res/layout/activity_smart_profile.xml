@@ -8,45 +8,69 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="243dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="9dp"
         android:text="SMART PROFILE"
         android:textSize="30sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="253dp"
-        android:layout_height="178dp"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="75dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAttendeeName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
         tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textViewAttendeeName"
         android:layout_width="171dp"
-        android:layout_height="44dp"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="270dp" />
+        android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewOrganization"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/textViewOrganization"
         android:layout_width="182dp"
-        android:layout_height="43dp"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="327dp" />
+        android:layout_height="0dp"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLinkedIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAttendeeName" />
 
     <Button
         android:id="@+id/buttonLinkedIn"
         android:layout_width="117dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="78dp"
         android:background="#00274c"
         android:text="Linkedin"
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="393dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOrganization" />
 </android.support.constraint.ConstraintLayout>

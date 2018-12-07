@@ -18,7 +18,7 @@ public class FirstPage extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
 
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.buttonSurvey);
         button.setOnClickListener(this);
     }
 

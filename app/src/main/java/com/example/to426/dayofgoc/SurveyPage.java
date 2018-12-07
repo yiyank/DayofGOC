@@ -2,17 +2,31 @@ package com.example.to426.dayofgoc;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class SurveyPage extends Activity {
+public class SurveyPage extends Activity implements View.OnClickListener {
+
+    private Button buttonSurvey;
+    private TextView textViewSurveyFeedback, textViewParagraph1, textViewParagraph2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey_page);
+
+        buttonSurvey = findViewById(R.id.buttonSurvey);
+        textViewSurveyFeedback = findViewById(R.id.textViewSurveyFeedback);
+        textViewParagraph1 = findViewById(R.id.textViewParagraph1);
+        textViewParagraph2 = findViewById(R.id.textViewParagraph2);
+
+        buttonSurvey.setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +66,14 @@ public class SurveyPage extends Activity {
 
             default:
                 return false;
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == buttonSurvey) {
+            Intent browserSurvey = new Intent (Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/1gSQd4ePpPFuAv4y1nElVJ_TPk7WkzYRFVgXnV09oNLk/edit?ts=5be1a2cc"));
+            startActivity(browserSurvey);
         }
     }
 }
