@@ -4,37 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Attendee_List"
     android:layout_width="380dp"
-    android:layout_height="80dp">
+    android:layout_height="80dp"
+    tools:layout_editor_absoluteY="73dp">
 
     <TextView
-        android:id="@+id/na"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:layout_width="268dp"
+        android:layout_height="19dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="102dp"
-        android:layout_marginRight="102dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="11dp"
         android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/org"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/photo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/or"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="102dp"
-        android:layout_marginRight="102dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/org"
+        android:layout_width="264dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="20dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toEndOf="@+id/photo"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="104dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:id="@+id/photo"
+        android:layout_width="54dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />

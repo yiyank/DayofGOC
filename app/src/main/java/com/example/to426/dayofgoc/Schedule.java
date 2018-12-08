@@ -31,12 +31,12 @@ public class Schedule extends Activity {
     private void initEvents() {
         GOCEvents = new ArrayList<>();
 
-        GOCEvents.add(new Events("Alumni Happy Hour","Pizza House","4:00 PM","","Bringing all Tauber alumni together to celebrate and kickoff the conference! Come for free pizza, drinks and the chance to network with our speakers. Dress code: Business Casual"));
-        GOCEvents.add(new Events("Welcome Reception","Ross Colloquium","6:00 PM","","Description 2"));
-        GOCEvents.add(new Events("Opening Remarks","Ross Colloquium","7:00 PM","Joel Tauber, Dr. Alec D. Gallimore","Description 3"));
-        GOCEvents.add(new Events("Dinner","Ross Colloquium","7:15 PM ","","Description 4"));
-        GOCEvents.add(new Events("Case Competition Winner","Ross Colloquium","7:30 PM ","","Description 4"));
-        GOCEvents.add(new Events("Keynote Address","Ross Colloquium","7:45 PM ","Toby Brzoznowski","Description 4"));
+        GOCEvents.add(new Events("Alumni Happy Hour","Pizza House","4:00 PM","","Bringing all Tauber alumni together to celebrate and kickoff the conference! Come for free pizza, drinks and the chance to network with our speakers."));
+        GOCEvents.add(new Events("Welcome Reception","Ross Colloquium","6:00 PM","","Registration will begin at 6:00 PM. Take this time to get your nametag, register and get free swag on us!"));
+        GOCEvents.add(new Events("Opening Remarks","Ross Colloquium","7:00 PM","Dr. Alec D. Gallimore","We're so excited to host Dr. Alec D. Gallimore, the Robert J. Vlasic Dean of Engineering, as our first speaker and to inspire all the attendees."));
+        GOCEvents.add(new Events("Dinner","Ross Colloquium","7:15 PM ","","Delicious dinner provided by Ross Catering, including dessert!"));
+        GOCEvents.add(new Events("Case Competition Winner","Ross Colloquium","7:30 PM ","","Announcing the winners of the PwC and Strategy& Case Competition Finals."));
+        GOCEvents.add(new Events("Keynote Address","Ross Colloquium","7:45 PM ","Toby Brzoznowski","Tony Brzoznowski, Co-Founder and Chief Strategy Officer of Llamasoft, will lead our first keynote address about the Digital Imperative and the New Age Operating Model."));
 
         initRecyclerView();
     }
@@ -59,14 +59,14 @@ public class Schedule extends Activity {
     private void initEventsSecond() {
         GOCEventsSecond = new ArrayList<>();
 
-        GOCEventsSecond.add(new Events("Networking Breakfast","Ross Colloquium","8:00 AM","","Description 1"));
-        GOCEventsSecond.add(new Events("Introductory Remarks","Ross Colloquium","8:45 AM","","Description 1"));
-        GOCEventsSecond.add(new Events("Keynote Address","Ross Colloquium","9:00 AM","Mary Ellen Smith","Description 1"));
-        GOCEventsSecond.add(new Events("Panels First Round","R1210, R1220","9:55 AM","","Description 1"));
-        GOCEventsSecond.add(new Events("Panels Second Round","R1210, R1220","11:05 AM","","Description 1"));
-        GOCEventsSecond.add(new Events("Lunch & Keynote","Ross Colloquium","12:15 PM","Russell Hensley","Description 1"));
-        GOCEventsSecond.add(new Events("Closing Remarks","Ross Colloquium","1:15 PM","","Description 1"));
-        GOCEventsSecond.add(new Events("Company Coffee Chats","Various Rooms","1:30 PM","","Description 1"));
+        GOCEventsSecond.add(new Events("Networking Breakfast","Ross Colloquium","8:00 AM","","Come early for a beautiful breakfast buffet and the chance to network with other early risers!"));
+        GOCEventsSecond.add(new Events("Introductory Remarks","Ross Colloquium","8:45 AM","","Additional introductory remarks to set the tone for another inspiring day!"));
+        GOCEventsSecond.add(new Events("Keynote Address","Ross Colloquium","9:00 AM","Mary Ellen Smith","Mary Ellen Smith, Corporate Vice President of Microsoft, will present the second keynote address on Digital Transformation Journey."));
+        GOCEventsSecond.add(new Events("Panel First Round","R1210","9:55 AM","","Digitizing Operations: From Manufacturing to Services with panel members from General Electric, Boeing, Microsoft and more!"));
+        GOCEventsSecond.add(new Events("Panel Second Round","R1210","11:05 AM","","Sustainability in the Digital Age with panelists from Dell, Amazon and Deloitte."));
+        GOCEventsSecond.add(new Events("Lunch & Keynote","Ross Colloquium","12:15 PM","Russell Hensley","Keynote will be presented by Russell Hensley, Partner from McKinsey Detroit about Where Operations are Headed over the Next 25 Years."));
+        GOCEventsSecond.add(new Events("Closing Remarks","Ross Colloquium","1:15 PM","","Thanking all the attendees and speakers who made this such a great event!"));
+        GOCEventsSecond.add(new Events("Company Coffee Chats","Various Rooms","1:30 PM","","For attendees and company representatives who want to continue networking after the event!"));
 
         initRecyclerViewSecond();
     }

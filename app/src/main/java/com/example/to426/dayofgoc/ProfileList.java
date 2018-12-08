@@ -77,15 +77,12 @@ public class ProfileList extends Activity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater optionMenuInflater = getMenuInflater();
         optionMenuInflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

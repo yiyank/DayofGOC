@@ -48,7 +48,12 @@ public class RecyclerViewSchedule extends RecyclerView.Adapter<RecyclerViewSched
         viewHolder.Layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // View mDialogView = LayoutInflater.from(mContext).inflate(R.layout.dialog_box, null);
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                // builder.setView(mDialogView);
+
+                builder.setTitle(GOCEvents.get(i).EventName);
+                builder.setMessage(GOCEvents.get(i).Description);
                 builder.setPositiveButton(GOCEvents.get(i).Location, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
