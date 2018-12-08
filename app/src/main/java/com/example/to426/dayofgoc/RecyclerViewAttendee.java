@@ -38,8 +38,8 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
-        viewHolder.na.setText(GOCAttendees.get(i).Name);
-        viewHolder.or.setText(GOCAttendees.get(i).Organization);
+        viewHolder.name.setText(GOCAttendees.get(i).Name);
+        viewHolder.org.setText(GOCAttendees.get(i).Organization);
         viewHolder.Layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {Toast.makeText(mContext, GOCAttendees.get(i).Email, Toast.LENGTH_SHORT).show();
@@ -51,8 +51,6 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
                 mContext.startActivity(go);
             }
         });
-
-
     }
 
     //Dynamically determines number of cells in layout
@@ -63,15 +61,15 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
 
     // View for each item in the Adapter class
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView na,or;
+        TextView name,org;
 
         ConstraintLayout Layout;
 
         //Like onCreate
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            na = itemView.findViewById(R.id.na);
-            or = itemView.findViewById(R.id.or);
+            name = itemView.findViewById(R.id.name);
+            org = itemView.findViewById(R.id.org);
 
             Layout = itemView.findViewById(R.id.Attendee_List);
         }

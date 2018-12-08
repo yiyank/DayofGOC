@@ -83,6 +83,7 @@ public class LoginPage extends Activity {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
+
     public void onStop(){
         super.onStop();
         if(mAuthListener != null) {

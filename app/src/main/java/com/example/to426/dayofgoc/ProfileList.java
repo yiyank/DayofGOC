@@ -3,6 +3,7 @@ package com.example.to426.dayofgoc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -24,11 +25,47 @@ public class ProfileList extends Activity {
 
     private ArrayList<Attendees> GOCAttendees;
     private Button updateProfile;
+    private FirebaseDatabase database;
+    private ValueEventListener databaseListener;
+    private DatabaseReference myRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_list);
-        initEvents();
+
+        GOCAttendees = new ArrayList<>();
+
+        //initRecyclerViewFunction
+        RecyclerView recyclerView = findViewById(R.id.rvattendee);
+        final RecyclerViewAttendee rv = new RecyclerViewAttendee(GOCAttendees, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(rv);
+
+        //initAttendeesFunction
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference();
+        databaseListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()) {
+
+                    //String ue = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+                    String post1 = uniqueKeySnapshot.child("Name").getValue(String.class);
+                    String post2 = uniqueKeySnapshot.child("Organization").getValue(String.class);
+                    String post3 = uniqueKeySnapshot.child("Industry").getValue(String.class);
+                    String post4 = uniqueKeySnapshot.child("Email").getValue(String.class);
+                    String post5 = uniqueKeySnapshot.child("Linkedin").getValue(String.class);
+                    GOCAttendees.add(new Attendees(post1,post2,post3,post4,post5));
+                }
+                rv.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
 
         updateProfile = findViewById(R.id.updateProfile);
         updateProfile.setOnClickListener(new View.OnClickListener(){
@@ -41,43 +78,21 @@ public class ProfileList extends Activity {
 
     }
 
+    public void onStart(){
+        super.onStart();
+        myRef.addValueEventListener(databaseListener);
+    }
 
-    private void initEvents() {
-        GOCAttendees = new ArrayList<>();
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference();
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()) {
-
-                    //String ue = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-                    String post1 = uniqueKeySnapshot.child("Name").getValue(String.class);
-                    String post2 = uniqueKeySnapshot.child("Organization").getValue(String.class);
-                    String post3 = uniqueKeySnapshot.child("Industry").getValue(String.class);
-                    String post4 = uniqueKeySnapshot.child("Email").getValue(String.class);
-                    String post5 = uniqueKeySnapshot.child("Linkedin").getValue(String.class);
-                    GOCAttendees.add(new Attendees(post1,post2,post3,post4,post5));
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        initRecyclerView();
+    public void onStop(){
+        super.onStop();
+        if(databaseListener != null){
+            myRef.removeEventListener(databaseListener);
+        }
     }
 
     private void initRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.rvattendee);
-        RecyclerViewAttendee rv = new RecyclerViewAttendee(GOCAttendees, this);
-        recyclerView.setAdapter(rv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -85,7 +100,6 @@ public class ProfileList extends Activity {
         optionMenuInflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

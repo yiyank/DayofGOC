@@ -17,14 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginPage" />
-        <activity android:name=".ConferenceIntro" />
         <activity android:name=".Schedule" />
         <activity android:name=".Map" />
         <activity android:name=".SurveyPage" />
         <activity android:name=".ProfileList" />
         <activity android:name=".SmartProfile" />
         <activity android:name=".Register" />
-        <activity android:name=".UpdateProfile"></activity>
+        <activity android:name=".UpdateProfile" />
+        <activity android:name=".ConferenceIntro" />
     </application>
 
 </manifest>
