@@ -62,10 +62,15 @@ public class RecyclerViewSchedule extends RecyclerView.Adapter<RecyclerViewSched
                     }
                 });
                 // Figure out how to click to specific Speaker
-                builder.setNegativeButton(GOCEvents.get(i).Speaker, new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(GOCEvents.get(i).Speaker.Name, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent go1 = new Intent(mContext, SmartProfile.class);
+                        go1.putExtra("email_value",GOCEvents.get(i).Speaker.Email);
+                        go1.putExtra("name_value",GOCEvents.get(i).Speaker.Name);
+                        go1.putExtra("industry_value",GOCEvents.get(i).Speaker.Industry);
+                        go1.putExtra("organization_value",GOCEvents.get(i).Speaker.Organization);
+                        go1.putExtra("link_value",GOCEvents.get(i).Speaker.Linkedin);
                         mContext.startActivity(go1);
                     }
                 });

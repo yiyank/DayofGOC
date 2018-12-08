@@ -87,7 +87,7 @@ public class SmartProfile extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent linkedin = new Intent (Intent.ACTION_VIEW, Uri.parse("https://"+Linkforattendee));
+        Intent linkedin = new Intent (Intent.ACTION_VIEW, Uri.parse(Linkforattendee));
         startActivity(linkedin);
     }
 

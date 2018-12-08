@@ -57,8 +57,8 @@
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:ems="10"
-        android:hint="LinkedIn URL"
         android:inputType="textPersonName"
+        android:text="http://"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editIndustry" />
 
