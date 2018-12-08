@@ -7,7 +7,7 @@
     tools:context=".SmartProfile">
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textViewSmartProfile"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="70dp"
@@ -19,13 +19,14 @@
         android:text="SMART PROFILE"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageViewProfile"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="65dp"
@@ -36,7 +37,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textViewAttendeeName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSmartProfile"
         tools:src="@tools:sample/avatars" />
 
     <TextView
@@ -47,7 +48,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textViewOrganization"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 
     <TextView
         android:id="@+id/textViewOrganization"
