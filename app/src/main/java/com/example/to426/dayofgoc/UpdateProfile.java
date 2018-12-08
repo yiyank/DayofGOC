@@ -3,6 +3,8 @@ package com.example.to426.dayofgoc;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -26,17 +28,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class UpdateProfile extends Activity implements View.OnClickListener {
 
 
     private int PICK_IMAGE_REQUEST = 1;
-    private Button finish,upload,select;
+    private Button finish,select;
     private EditText editName, editLink, editOrganization;
     private Spinner editIndustry;
     private ImageView imageView;
@@ -46,11 +51,10 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_update_profile);
         mStorageRef = FirebaseStorage.getInstance().getReference();
         select = findViewById(R.id.select);
-        upload = findViewById(R.id.upload);
-        finish = findViewById(R.id.finish);
+        finish = findViewById(R.id.button);
         editName = findViewById(R.id.editName);
         editLink = findViewById(R.id.editLink);
         editOrganization = findViewById(R.id.editOrganization);
@@ -64,7 +68,6 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
         ArrayAdapter<String> industryAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,industryChoices);
         editIndustry.setAdapter(industryAdapter);
         finish.setOnClickListener(this);
-        upload.setOnClickListener(this);
         select.setOnClickListener(this);
 
     }
@@ -107,11 +110,12 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
 
                 }
             });
-        } else if(v==upload){
-            String ue = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-            uploadImage(ue);
 
-        } else if(v==select){
+                uploadImage(ue);
+
+
+
+        }  else if(v==select){
             selectImages();
         }
 
@@ -124,13 +128,14 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
         select.setType("image/*");
         select.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(select,"Select Picture"),PICK_IMAGE_REQUEST);
-
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode,int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
-
+//
         if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData()!= null){
             Uri uri = data.getData();
             selectedImageUri = uri;
@@ -142,19 +147,20 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
                 e.printStackTrace();
             }
         }
+
     }
 
     public void uploadImage(String user){
 
         StorageReference sRef = mStorageRef.child("images/" + user +".jpg");
-
+        if(selectedImageUri!=null){
         sRef.putFile(selectedImageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        // Get a URL to the uploaded content
-                        Toast.makeText(UpdateProfile.this,"Uploaded",Toast.LENGTH_LONG).show();
-                    }
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            // Get a URL to the uploaded content
+                            Toast.makeText(UpdateProfile.this,"Uploaded",Toast.LENGTH_LONG).show();
+                        }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -162,8 +168,12 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
                         // Handle unsuccessful uploads
                         // ...
                     }
-                });
+                });}
     }
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){

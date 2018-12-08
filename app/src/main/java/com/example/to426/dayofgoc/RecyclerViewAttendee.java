@@ -1,6 +1,7 @@
 package com.example.to426.dayofgoc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -41,8 +42,13 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
         viewHolder.or.setText(GOCAttendees.get(i).Organization);
         viewHolder.Layout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext, GOCAttendees.get(i).Name, Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {Toast.makeText(mContext, GOCAttendees.get(i).Email, Toast.LENGTH_SHORT).show();
+                Intent go = new Intent(mContext,SmartProfile.class);
+                go.putExtra("email_value",GOCAttendees.get(i).Email);
+                go.putExtra("name_value",GOCAttendees.get(i).Name);
+                go.putExtra("industry_value",GOCAttendees.get(i).Industry);
+                go.putExtra("organization_value",GOCAttendees.get(i).Organization);
+                mContext.startActivity(go);
             }
         });
 

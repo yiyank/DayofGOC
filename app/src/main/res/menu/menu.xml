@@ -10,7 +10,7 @@
         android:title="Map" />
     <item
         android:id="@+id/menuprofilelist"
-        android:title="SmartProfile" />
+        android:title="Attendee List" />
     <item
         android:id="@+id/menuschedule"
         android:title="Schedule"/>

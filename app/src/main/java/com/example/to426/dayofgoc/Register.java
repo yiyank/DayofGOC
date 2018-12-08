@@ -49,7 +49,7 @@ public class Register extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_register);
         mStorageRef = FirebaseStorage.getInstance().getReference();
         select = findViewById(R.id.select);
-        upload = findViewById(R.id.upload);
+
         finish = findViewById(R.id.finish);
         editName = findViewById(R.id.editName);
         editLink = findViewById(R.id.editLink);
@@ -110,9 +110,8 @@ public class Register extends Activity implements View.OnClickListener {
 
                 }
             });
-        } else if(v==upload){
-            String ue = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-            uploadImage(ue);
+
+            uploadImage(userid);
 
         } else if(v==select){
             selectImages();
@@ -150,7 +149,7 @@ public class Register extends Activity implements View.OnClickListener {
     public void uploadImage(String user){
 
         StorageReference sRef = mStorageRef.child("images/" + user +".jpg");
-
+        if(selectedImageUri!=null){
         sRef.putFile(selectedImageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -166,6 +165,9 @@ public class Register extends Activity implements View.OnClickListener {
                         // ...
                     }
                 });
+        }else{
+
+        }
     }
 
     @Override
