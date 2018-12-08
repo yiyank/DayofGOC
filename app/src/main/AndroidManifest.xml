@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginPage" />
-        <activity android:name=".ConferenceIntro" />
         <activity android:name=".Schedule" />
         <activity android:name=".Map" />
         <activity android:name=".SurveyPage" />

@@ -1,51 +1,35 @@
 {
   "project_info": {
-    "project_number": "450113984358",
-    "firebase_url": "https://dayofgoc-42474.firebaseio.com",
-    "project_id": "dayofgoc-42474",
-    "storage_bucket": "dayofgoc-42474.appspot.com"
+    "project_number": "218381963391",
+    "firebase_url": "https://dayofgoc2.firebaseio.com",
+    "project_id": "dayofgoc2",
+    "storage_bucket": "dayofgoc2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:450113984358:android:172520623223d026",
+        "mobilesdk_app_id": "1:218381963391:android:172520623223d026",
         "android_client_info": {
           "package_name": "com.example.to426.dayofgoc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "450113984358-37cu72uh5a84inra71v30rnrk99o0mg3.apps.googleusercontent.com",
+          "client_id": "218381963391-ckcdqa6k79poiivct4f60pel2e186s62.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.to426.dayofgoc",
-            "certificate_hash": "dd42bf0a86be3a3cc62b18de1de68d90c66d87dd"
+            "certificate_hash": "f9d645211a57ab3f15bbacd4358c110d673f95cc"
           }
         },
         {
-          "client_id": "450113984358-ghavf0fmoecc3etkc9m23a6cd38f4igc.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.to426.dayofgoc",
-            "certificate_hash": "59714dc47961cab04850a5efce8a80455505500c"
-          }
-        },
-        {
-          "client_id": "450113984358-1biv74ndrh4jk9karggs7k0otn5tsk4u.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.to426.dayofgoc",
-            "certificate_hash": "b6d2ac0ce3cd971841f8b8f7227bb17611fa3855"
-          }
-        },
-        {
-          "client_id": "450113984358-k5nnpbd44o2c9jnqrq4lthqi98svnjhj.apps.googleusercontent.com",
+          "client_id": "218381963391-bllo8khe3pmjhvchc5f76gscipc9ntfk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCuiu_3Wc9aTLs53ZRFE8cBuSij53PkvKw"
+          "current_key": "AIzaSyAvEBDzPYtxEXr5v8KOWavxPYF0N_gFtj8"
         }
       ],
       "services": {
@@ -56,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "450113984358-k5nnpbd44o2c9jnqrq4lthqi98svnjhj.apps.googleusercontent.com",
+              "client_id": "218381963391-bllo8khe3pmjhvchc5f76gscipc9ntfk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
