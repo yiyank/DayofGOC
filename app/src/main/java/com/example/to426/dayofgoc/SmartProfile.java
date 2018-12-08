@@ -43,6 +43,7 @@ public class SmartProfile extends Activity {
         Industryforattendee = getIntent().getStringExtra("industry_value");
         Nameforattendee = getIntent().getStringExtra("name_value");
         Organizationforattendee = getIntent().getStringExtra("organization_value");
+
         EmailPlaceholder = findViewById(R.id.EmailPlaceholder);
         NamePlaceholder = findViewById(R.id.NamePlaceholder);
         IndustryPlaceholder = findViewById(R.id.IndustryPlaceholder);
@@ -53,9 +54,6 @@ public class SmartProfile extends Activity {
         NamePlaceholder.setText(Nameforattendee);
         IndustryPlaceholder.setText(Industryforattendee);
         OrganizationPlaceholder.setText(Organizationforattendee);
-
-
-
 
         StorageReference ref = mStorageRef.child("images/" + Emailforattendee +".jpg");
         try {
