@@ -1,57 +1,67 @@
 package com.example.to426.dayofgoc;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
-public class ConferenceIntro extends Activity {
+public class ConferenceIntro extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    private BottomNavigationView mMainNav;
+    private FrameLayout mMainFrame;
+
+    private HomeFragment homeFragment;
+    private ScheduleFragment scheduleFragment;
+    private MapFragment mapFragment;
+    private SurveyFragment surveyFragment;
+    private ProfileFragment profileFragment;
+    //private SurveyFragment surveyFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conference_intro);
+
+        mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
+        mMainFrame = (FrameLayout) findViewById(R.id.main_frame);
+
+        homeFragment = new HomeFragment();
+        scheduleFragment = new ScheduleFragment();
+        mapFragment = new MapFragment();
+
+        mMainNav.setOnNavigationItemSelectedListener(this);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater optionMenuInflater = getMenuInflater();
-        optionMenuInflater.inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.menuconference:
-                Intent go1 = new Intent(this, ConferenceIntro.class);
-                this.startActivity(go1);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.iconHome:
+                setFragment(homeFragment);
                 return true;
-            case R.id.menumap:
-                Intent go2 = new Intent(this, Map.class);
-                this.startActivity(go2);
+            case R.id.iconSchedule:
+                setFragment(scheduleFragment);
                 return true;
-            case R.id.menuprofilelist:
-                Intent go3 = new Intent(this, ProfileList.class);
-                this.startActivity(go3);
+            case R.id.iconMap:
+                setFragment(mapFragment);
                 return true;
-            case R.id.menuschedule:
-                Intent go4 = new Intent(this, Schedule.class);
-                this.startActivity(go4);
+            case R.id.iconSurvey:
+                setFragment(surveyFragment);
                 return true;
-            case R.id.menusurvey:
-                Intent go5 = new Intent(this, SurveyPage.class);
-                this.startActivity(go5);
+            case R.id.iconProfile:
+                setFragment(profileFragment);
                 return true;
-            case R.id.menulogout:
-                Intent go6 = new Intent(this,LoginPage.class);
-                this.startActivity(go6);
-
             default:
                 return false;
         }
+    }
+
+    private void setFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_frame, fragment);
+        fragmentTransaction.commit();
     }
 }
