@@ -12,12 +12,13 @@
         android:layout_height="484dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp">
+        android:layout_marginTop="27dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <ImageView
                 android:id="@+id/imageView"
@@ -29,6 +30,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="0dp"
+                android:layout_marginRight="12dp"
                 android:src="@drawable/conferenceintroimage" />
 
             <TextView
@@ -40,9 +42,8 @@
                 android:layout_marginTop="6dp"
                 android:gravity="center"
                 android:text="Welcome to the Global Operations Conference 2018!"
-                android:textStyle="bold"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -51,20 +52,15 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="0dp"
-                android:text="The Tauber Institute for Global Operations hosts the must attend operations event of the year — Taubers’ Global Operations Conference, GOC.
+                android:text="The Tauber Institute for Global Operations is pleased to announce the annual Global Operations Conference (GOC) for 2018: Operations in a Digital Age. \n
 
-            The combination of global leaders in industry with top-ranked business and engineering faculty, GOC reflects the unparalleled resources the Tauber Institute offers today and symbolizes our unwavering commitment to the next generation of Operations leaders.
+\n With companies increasingly focused on leveraging new technology to evolve the way they do business, the GOC brings together leaders in industry and academia to explore topics related to how technology and data are shaping operations. \n
 
-            Here’s what a past attendee had to say:
+\n The annual conference is your opportunity to learn more about state of the art technology in operations, network with operations leaders across industries, and meet emerging operations professionals. \n
 
-            “The Tauber Global Operations Conference was a great experience to expand my understanding of how recent business and technology trends are impacting the operations and strategy of several major global companies. Also, it was a unique opportunity to expand my network and meet a very diverse and talented group of professionals that work across a wide range of global companies and industries.” - Jose Gomez, UCLA
+\n 'The Tauber Global Operations Conference was a great experience to expand my understanding of how recent business and technology trends are impacting the operations and strategy of several major global companies. Also, it was a unique opportunity to expand my network and meet a very diverse and talented group of professionals that work across a wide range of global companies and industries.'
 
-            Experience two days where you will:
-
-            Learn from award winning faculty from both the College of Engineering and the Stephen M. Ross School of Business as well as leading experts in operations today.
-            Discover forward-thinking panels discussing real world strategies implemented to maximize and transform operations.
-            Hear dynamic speakers and well respected industry experts.
-            Network with leading, emerging and future operations leaders" />
+\n - Jose Gomez, UCLA" />
         </LinearLayout>
 
 
