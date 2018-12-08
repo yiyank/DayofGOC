@@ -2,15 +2,26 @@ package com.example.to426.dayofgoc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAttendee.ViewHolder>{
@@ -18,6 +29,9 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
     private ArrayList<Attendees> GOCAttendees;
     //Tells where within the app it is
     private Context mContext;
+
+    private StorageReference mStorageRef;
+    private Bitmap my_image;
 
     //Constructor
     RecyclerViewAttendee(ArrayList<Attendees> GOCAttendees, Context mContext) {
@@ -37,7 +51,7 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
 
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
         viewHolder.name.setText(GOCAttendees.get(i).Name);
         viewHolder.org.setText(GOCAttendees.get(i).Organization);
         viewHolder.Layout.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +66,29 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
                 mContext.startActivity(go);
             }
         });
+
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+
+        StorageReference ref = mStorageRef.child("images/" + GOCAttendees.get(i).Email +".jpg");
+        try {
+            final File localFile = File.createTempFile("Images", "jpg");
+            ref.getFile(localFile).addOnSuccessListener(new OnSuccessListener< FileDownloadTask.TaskSnapshot >() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    my_image = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    viewHolder.ImagePlaceholder.setImageBitmap(my_image);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //
+        
     }
 
     //Dynamically determines number of cells in layout
@@ -63,7 +100,7 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
     // View for each item in the Adapter class
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView name,org;
-
+        ImageView ImagePlaceholder;
         ConstraintLayout Layout;
 
         //Like onCreate
@@ -73,6 +110,7 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
             org = itemView.findViewById(R.id.org);
 
             Layout = itemView.findViewById(R.id.Attendee_List);
+            ImagePlaceholder = itemView.findViewById(R.id.photo);
         }
     }
 }
