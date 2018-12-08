@@ -13,24 +13,30 @@ import java.util.ArrayList;
 
 public class Schedule extends Activity {
 
+    //This is the list of events for day one
     private ArrayList<Events> GOCEvents;
+    //This is the list of events for day two
+    private ArrayList<Events> GOCEventsSecond;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
         initEvents();
+        initEventsSecond();
     }
 
+    //For Day One
     private void initEvents() {
         GOCEvents = new ArrayList<>();
 
-        GOCEvents.add(new Events("Event 1","Location 1","Time 1","Speaker 1","Description 1"));
-        GOCEvents.add(new Events("Event 2","Location 2","Time 2","Speaker 2","Description 2"));
-        GOCEvents.add(new Events("Event 3","Location 3","Time 3","Speaker 3","Description 3"));
-        GOCEvents.add(new Events("Event 4","Location 4","Time 4","Speaker 4","Description 4"));
-
-
+        GOCEvents.add(new Events("Alumni Happy Hour","Pizza House","4:00 PM","","Bringing all Tauber alumni together to celebrate and kickoff the conference! Come for free pizza, drinks and the chance to network with our speakers. Dress code: Business Casual"));
+        GOCEvents.add(new Events("Welcome Reception","Ross Colloquium","6:00 PM","","Description 2"));
+        GOCEvents.add(new Events("Opening Remarks","Ross Colloquium","7:00 PM","Joel Tauber, Dr. Alec D. Gallimore","Description 3"));
+        GOCEvents.add(new Events("Dinner","Ross Colloquium","7:15 PM ","","Description 4"));
+        GOCEvents.add(new Events("Case Competition Winner","Ross Colloquium","7:30 PM ","","Description 4"));
+        GOCEvents.add(new Events("Keynote Address","Ross Colloquium","7:45 PM ","Toby Brzoznowski","Description 4"));
 
         initRecyclerView();
     }
@@ -42,7 +48,28 @@ public class Schedule extends Activity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    // For Day Two
+    private void initRecyclerViewSecond() {
+        RecyclerView recyclerView = findViewById(R.id.rvschedule2);
+        RecyclerViewSchedule rv2 = new RecyclerViewSchedule(GOCEventsSecond, this);
+        recyclerView.setAdapter(rv2);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
 
+    private void initEventsSecond() {
+        GOCEventsSecond = new ArrayList<>();
+
+        GOCEventsSecond.add(new Events("Networking Breakfast","Ross Colloquium","8:00 AM","","Description 1"));
+        GOCEventsSecond.add(new Events("Introductory Remarks","Ross Colloquium","8:45 AM","","Description 1"));
+        GOCEventsSecond.add(new Events("Keynote Address","Ross Colloquium","9:00 AM","Mary Ellen Smith","Description 1"));
+        GOCEventsSecond.add(new Events("Panels First Round","R1210, R1220","9:55 AM","","Description 1"));
+        GOCEventsSecond.add(new Events("Panels Second Round","R1210, R1220","11:05 AM","","Description 1"));
+        GOCEventsSecond.add(new Events("Lunch & Keynote","Ross Colloquium","12:15 PM","Russell Hensley","Description 1"));
+        GOCEventsSecond.add(new Events("Closing Remarks","Ross Colloquium","1:15 PM","","Description 1"));
+        GOCEventsSecond.add(new Events("Company Coffee Chats","Various Rooms","1:30 PM","","Description 1"));
+
+        initRecyclerViewSecond();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -50,7 +77,6 @@ public class Schedule extends Activity {
         optionMenuInflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

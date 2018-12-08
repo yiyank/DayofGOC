@@ -18,6 +18,7 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:text="123@123.123"
         app:layout_constraintBottom_toTopOf="@+id/RegisterButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -37,6 +38,7 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:text="123123"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -45,7 +47,7 @@
         app:layout_constraintVertical_bias="0.346" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/LogInButton"
         android:layout_width="120dp"
         android:layout_height="41dp"
         android:layout_marginStart="145dp"
