@@ -23,7 +23,8 @@
         <activity android:name=".ProfileList" />
         <activity android:name=".SmartProfile" />
         <activity android:name=".Register" />
-        <activity android:name=".UpdateProfile"></activity>
+        <activity android:name=".UpdateProfile" />
+        <activity android:name=".ConferenceIntro" />
     </application>
 
 </manifest>
