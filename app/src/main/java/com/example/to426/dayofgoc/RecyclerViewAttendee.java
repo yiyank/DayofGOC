@@ -86,8 +86,8 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
+        //
+        
     }
 
     //Dynamically determines number of cells in layout
