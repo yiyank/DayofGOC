@@ -4,12 +4,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,10 +28,11 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class SmartProfile extends Activity {
-    String Emailforattendee,Nameforattendee,Organizationforattendee,Industryforattendee;
+public class SmartProfile extends Activity implements View.OnClickListener{
+    String Emailforattendee,Nameforattendee,Organizationforattendee,Industryforattendee,Linkforattendee;
     TextView NamePlaceholder,IndustryPlaceholder,OrganizationPlaceholder,EmailPlaceholder;
     ImageView ImagePlaceholder;
+    private ImageButton linkedinbutton;
     private StorageReference mStorageRef;
     private Bitmap my_image;
 
@@ -43,22 +48,25 @@ public class SmartProfile extends Activity {
         Industryforattendee = getIntent().getStringExtra("industry_value");
         Nameforattendee = getIntent().getStringExtra("name_value");
         Organizationforattendee = getIntent().getStringExtra("organization_value");
-
+        Linkforattendee = getIntent().getStringExtra("link_value");
         EmailPlaceholder = findViewById(R.id.EmailPlaceholder);
         NamePlaceholder = findViewById(R.id.NamePlaceholder);
         IndustryPlaceholder = findViewById(R.id.IndustryPlaceholder);
         OrganizationPlaceholder = findViewById(R.id.OrganizationPlaceholder);
         ImagePlaceholder = findViewById(R.id.ImagePlaceholder);
+        linkedinbutton = findViewById(R.id.linkedinbutton);
 
         EmailPlaceholder.setText(Emailforattendee);
         NamePlaceholder.setText(Nameforattendee);
         IndustryPlaceholder.setText(Industryforattendee);
         OrganizationPlaceholder.setText(Organizationforattendee);
+        linkedinbutton.setOnClickListener(this);
 
-        StorageReference ref = mStorageRef.child("images/" + Emailforattendee +".jpg");
+
+        StorageReference ref = mStorageRef.child("images/" + Emailforattendee + ".jpg");
         try {
             final File localFile = File.createTempFile("Images", "jpg");
-            ref.getFile(localFile).addOnSuccessListener(new OnSuccessListener< FileDownloadTask.TaskSnapshot >() {
+            ref.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                     my_image = BitmapFactory.decodeFile(localFile.getAbsolutePath());
@@ -75,47 +83,13 @@ public class SmartProfile extends Activity {
         }
 
 
-
-        /*
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-
-        m = new ValueEventListener(){
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //String ue = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-                for (DataSnapshot datas1:dataSnapshot.getChildren()){
-
-                }
-
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        };
-
-
-
-
-
-*/
     }
-/*
-    public void onStart(){
-        super.onStart();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-        myRef.orderByChild("Email").equalTo(Emailforattendee).addListenerForSingleValueEvent(m);
+
+    @Override
+    public void onClick(View v) {
+        Intent linkedin = new Intent (Intent.ACTION_VIEW, Uri.parse("https://"+Linkforattendee));
+        startActivity(linkedin);
     }
-    public void onStop(){
-        super.onStop();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-        if(myRef != null) {
-            myRef.removeEventListener(m);
-        }
-    }*/
 
 
 
@@ -155,4 +129,6 @@ public class SmartProfile extends Activity {
                 return false;
         }
     }
+
+
 }

@@ -48,6 +48,7 @@ public class ProfileList extends Activity {
         databaseListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                GOCAttendees.clear();
                 for (DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()) {
 
                     //String ue = FirebaseAuth.getInstance().getCurrentUser().getEmail();

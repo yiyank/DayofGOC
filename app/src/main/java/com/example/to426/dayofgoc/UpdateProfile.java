@@ -98,11 +98,12 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
                                 datas1.child("Linkedin").getRef().setValue(editLink.getText().toString());
                             }
 
-                            Toast.makeText(UpdateProfile.this,"Information Updated!",Toast.LENGTH_SHORT).show();
-                            Intent go = new Intent(UpdateProfile.this, ProfileList.class);
-                            startActivity(go);
+
                             //}else{ }
                         }
+                    Toast.makeText(UpdateProfile.this,"Information Updated!",Toast.LENGTH_SHORT).show();
+                    Intent go = new Intent(UpdateProfile.this, ProfileList.class);
+                    startActivity(go);
 
                 }
                 @Override

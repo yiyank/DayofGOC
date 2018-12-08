@@ -62,6 +62,7 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
                 go.putExtra("name_value",GOCAttendees.get(i).Name);
                 go.putExtra("industry_value",GOCAttendees.get(i).Industry);
                 go.putExtra("organization_value",GOCAttendees.get(i).Organization);
+                go.putExtra("link_value",GOCAttendees.get(i).Linkedin);
                 mContext.startActivity(go);
             }
         });
