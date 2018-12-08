@@ -1,6 +1,7 @@
 package com.example.to426.dayofgoc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class RecyclerViewSchedule extends RecyclerView.Adapter<RecyclerViewSchedule.ViewHolder>{
     //Similar to vector in C++, except no square bracket operators
@@ -36,16 +40,31 @@ public class RecyclerViewSchedule extends RecyclerView.Adapter<RecyclerViewSched
 
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
-        viewHolder.en.setText(GOCEvents.get(i).EventName);
-        viewHolder.lo.setText(GOCEvents.get(i).Location);
-        viewHolder.tm.setText(GOCEvents.get(i).Time);
-        viewHolder.sp.setText(GOCEvents.get(i).Speaker);
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+        viewHolder.event.setText(GOCEvents.get(i).EventName);
+        viewHolder.location.setText(GOCEvents.get(i).Location);
+        viewHolder.time.setText(GOCEvents.get(i).Time);
 
         viewHolder.Layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, GOCEvents.get(i).EventName, Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setPositiveButton(GOCEvents.get(i).Location, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent go1 = new Intent(mContext, Map.class);
+                        mContext.startActivity(go1);
+                    }
+                });
+                // Figure out how to click to specific Speaker
+                builder.setNegativeButton(GOCEvents.get(i).Speaker, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent go1 = new Intent(mContext, SmartProfile.class);
+                        mContext.startActivity(go1);
+                    }
+                });
+                builder.create().show();
             }
         });
 
@@ -60,17 +79,16 @@ public class RecyclerViewSchedule extends RecyclerView.Adapter<RecyclerViewSched
 
     // View for each item in the Adapter class
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView lo,en,sp,tm;
+        TextView location,event,time;
 
         ConstraintLayout Layout;
 
         //Like onCreate
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            lo = itemView.findViewById(R.id.lo);
-            en = itemView.findViewById(R.id.en);
-            sp = itemView.findViewById(R.id.sp);
-            tm = itemView.findViewById(R.id.tm);
+            location = itemView.findViewById(R.id.location);
+            event = itemView.findViewById(R.id.event);
+            time = itemView.findViewById(R.id.time);
 
             Layout = itemView.findViewById(R.id.Schedule_List);
         }

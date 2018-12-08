@@ -4,23 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Schedule_List"
     android:layout_width="380dp"
-    android:layout_height="80dp">
+    android:layout_height="80dp"
+    tools:layout_editor_absoluteY="73dp">
 
     <TextView
-        android:id="@+id/lo"
+        android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/tm"
-        app:layout_constraintStart_toStartOf="@+id/en"
-        app:layout_constraintTop_toTopOf="@+id/tm" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/event" />
 
     <TextView
-        android:id="@+id/en"
+        android:id="@+id/event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginLeft="135dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textStyle="bold"
@@ -28,23 +29,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/sp"
+        android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/tm"
-        app:layout_constraintStart_toStartOf="@+id/tm" />
-
-    <TextView
-        android:id="@+id/tm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="16dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/event"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/event" />
 
 </android.support.constraint.ConstraintLayout>
