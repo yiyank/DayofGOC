@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/menuconference"
+        android:icon="@drawable/home_icon"
         android:title="Home" />
     <item
         android:id="@+id/menumap"
+        android:icon="@drawable/map_icon"
         android:title="Map" />
     <item
-        android:id="@+id/menuprofilelist"
-        android:title="Attendee List" />
-    <item
         android:id="@+id/menuschedule"
+        android:icon="@drawable/schedule_icon"
         android:title="Schedule" />
     <item
-        android:id="@+id/menusurvey"
-        android:title="Log out" />
+        android:id="@+id/menuprofile"
+        android:icon="@drawable/profile_icon"
+        android:title="Attendee List" />
     <item
         android:id="@+id/menulogout"
+        android:icon="@drawable/sign_out"
         android:title="Log out" />
 </menu>

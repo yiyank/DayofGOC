@@ -57,7 +57,7 @@ public class RecyclerViewSchedule extends RecyclerView.Adapter<RecyclerViewSched
                 builder.setPositiveButton(GOCEvents.get(i).Location, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent go1 = new Intent(mContext, Map.class);
+                        Intent go1 = new Intent(mContext, MapFragment.class);
                         mContext.startActivity(go1);
                     }
                 });

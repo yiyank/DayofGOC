@@ -19,8 +19,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Angel\AndroidStudioProjects\DayOfGOC\app\src\main\res\drawable\survey.png" />
-                                      <entry key="outputName" value="ic_survey" />
+                                      <entry key="imageAsset" value="$USER_HOME$/Desktop/signout.png" />
+                                      <entry key="outputName" value="sign_out" />
                                     </map>
                                   </option>
                                 </PersistentState>

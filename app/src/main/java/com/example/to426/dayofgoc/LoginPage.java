@@ -1,6 +1,6 @@
 package com.example.to426.dayofgoc;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginPage extends Activity {
+public class LoginPage extends AppCompatActivity {
 
     private static final String TAG = "loginPage";
     private Button LogInButton, RegisterButton;

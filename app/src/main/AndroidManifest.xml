@@ -17,10 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginPage" />
-        <activity android:name=".Schedule" />
-        <activity android:name=".Map" />
-        <activity android:name=".SurveyPage" />
-        <activity android:name=".ProfileList" />
         <activity android:name=".SmartProfile" />
         <activity android:name=".Register" />
         <activity android:name=".UpdateProfile" />
