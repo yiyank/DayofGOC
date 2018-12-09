@@ -61,7 +61,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
         editIndustry = findViewById(R.id.editIndustry);
 
         String[] industryChoices = new String[]{"Please Choose One","Aerospace","Agriculture",
-                "Chemical","Computer","Construction","Education","Energy",
+                "Chemical","Computer","Construction","Consulting","Education","Energy",
                 "Entertainment","Finance","Health Care","Information",
                 "Manufacturing","Mass Media","Telecommunications","Transport","Other"};
 
