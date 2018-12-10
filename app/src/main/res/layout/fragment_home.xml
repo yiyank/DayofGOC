@@ -16,26 +16,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="358dp"
                 android:layout_height="238dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="0dp"
                 android:src="@drawable/conferenceintroimage" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="358dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
                 android:layout_marginTop="6dp"
-                android:layout_marginRight="12dp"
                 android:gravity="center"
                 android:text="Welcome to the Global Operations Conference 2018!"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
@@ -43,13 +41,21 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="358dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="12dp"
-                android:text="The Tauber Institute for Global Operations hosts the must attend operations event of the year — Taubers’ Global Operations Conference, GOC. \n\nThe combination of global leaders in industry with top-ranked business and engineering faculty, GOC reflects the unparalleled resources the Tauber Institute offers today and symbolizes our unwavering commitment to the next generation of Operations leaders.\n\nHere’s what a past attendee had to say:\n     “The Tauber Global Operations Conference was a great experience to expand my understanding of how recent business and technology trends are impacting the operations and strategy of several major global companies. Also, it was a unique opportunity to expand my network and meet a very diverse and talented group of professionals that work across a wide range of global companies and industries.” - Jose Gomez, UCLA\n\nExperience two days where you will:\n&#8226;  Learn from award winning faculty from the College of Engineering and the Stephen M. Ross School of Business as well as leading experts in operations today.\n&#8226;  Discover forward-thinking panels discussing real world strategies implemented to transform operations.\n&#8226;  Hear dynamic speakers + respected industry experts.\n&#8226;  Network with leading + emerging operations leaders" />
+                android:text="The Tauber Institute for Global Operations hosts the must attend operations event of the year
+                 — Taubers’ Global Operations Conference, GOC. \n\nThe combination of global leaders in industry with
+                 top-ranked business and engineering faculty, GOC reflects the unparalleled resources the Tauber Institute
+                 offers today and symbolizes our unwavering commitment to the next generation of Operations leaders.\n\nHere’s
+                 what a past attendee had to say:\n     “The Tauber Global Operations Conference was a great experience to expand
+                 my understanding of how recent business and technology trends are impacting the operations and strategy of several
+                 major global companies. Also, it was a unique opportunity to expand my network and meet a very diverse and talented
+                 group of professionals that work across a wide range of global companies and industries.” - Jose Gomez, UCLA\n\n
+                 Experience two days where you will:\n&#8226;  Learn from award winning faculty from the College of Engineering and
+                 the Stephen M. Ross School of Business as well as leading operations experts.\n&#8226;  Discover
+                 forward-thinking panels discussing real world strategies transforming operations.\n&#8226;
+                 Hear from dynamic speakers + well-respected industry experts to learn from their experiences
+                 \n&#8226;  Network with leading + emerging operations leaders" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

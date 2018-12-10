@@ -15,30 +15,14 @@
         tools:layout_editor_absoluteY="73dp">
 
 
-        <ScrollView
-            android:id="@+id/scrollView2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="60dp"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvattendee"
+            android:layout_width="364dp"
+            android:layout_height="384dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toTopOf="@+id/finish"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvattendee"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="61dp"
-            app:layout_constraintBottom_toTopOf="@+id/finish"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.538"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9">
 
@@ -48,7 +32,7 @@
             android:id="@+id/finish"
             android:layout_width="210dp"
             android:layout_height="41dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="20dp"
             android:background="#ffcb05"
             android:text="Update your Profile"
             android:textColor="#ffffff"
@@ -56,18 +40,17 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+            app:layout_constraintTop_toBottomOf="@+id/rvattendee" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="21dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:text="GOC 2018 Attendees"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -79,15 +62,20 @@
             android:id="@+id/search"
             android:layout_width="120dp"
             android:layout_height="41dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginBottom="24dp"
             android:background="#ffcb05"
             android:text="SEARCH"
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rvattendee"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView9"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
