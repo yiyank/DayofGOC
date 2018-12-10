@@ -33,6 +33,7 @@ public class SmartProfile extends Activity implements View.OnClickListener{
     TextView NamePlaceholder,IndustryPlaceholder,OrganizationPlaceholder,EmailPlaceholder;
     ImageView ImagePlaceholder;
     private ImageButton linkedinbutton;
+    private Button back;
     private StorageReference mStorageRef;
     private Bitmap my_image;
 
@@ -55,12 +56,14 @@ public class SmartProfile extends Activity implements View.OnClickListener{
         OrganizationPlaceholder = findViewById(R.id.OrganizationPlaceholder);
         ImagePlaceholder = findViewById(R.id.ImagePlaceholder);
         linkedinbutton = findViewById(R.id.linkedinbutton);
+        back = findViewById(R.id.back);
 
         EmailPlaceholder.setText(Emailforattendee);
         NamePlaceholder.setText(Nameforattendee);
         IndustryPlaceholder.setText(Industryforattendee);
         OrganizationPlaceholder.setText(Organizationforattendee);
         linkedinbutton.setOnClickListener(this);
+        back.setOnClickListener(this);
 
 
         StorageReference ref = mStorageRef.child("images/" + Emailforattendee + ".jpg");
@@ -87,13 +90,17 @@ public class SmartProfile extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        if(v==back){
+            Intent go = new Intent(this, ConferenceIntro.class);
+            startActivity(go);
+        }else{
         if(Linkforattendee.equals("Not Available")){
             Toast.makeText(SmartProfile.this, "Website not available, sorry!", Toast.LENGTH_LONG).show();
 
         }else{
             Intent linkedin = new Intent (Intent.ACTION_VIEW, Uri.parse(Linkforattendee));
             startActivity(linkedin);
-        }
+        }}
 
     }
 

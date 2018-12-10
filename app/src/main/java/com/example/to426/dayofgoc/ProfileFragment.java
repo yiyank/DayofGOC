@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class ProfileFragment extends Fragment {
 
     private ArrayList<Attendees> GOCAttendees;
-    private Button updateProfile;
+    private Button updateProfile,search;
     private FirebaseDatabase database;
     private ValueEventListener databaseListener;
     private DatabaseReference myRef;
@@ -87,12 +87,19 @@ public class ProfileFragment extends Fragment {
 
             }
         };
-
-        updateProfile = profileview.findViewById(R.id.updateProfile);
+        search = profileview.findViewById(R.id.search);
+        updateProfile = profileview.findViewById(R.id.finish);
         updateProfile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent update = new Intent(getActivity(),UpdateProfile.class);
+                startActivity(update);
+            }
+        });
+        search.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent update = new Intent(getActivity(),SearchAttendee.class);
                 startActivity(update);
             }
         });
