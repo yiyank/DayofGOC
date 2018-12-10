@@ -1,6 +1,6 @@
 package com.example.to426.dayofgoc;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginPage extends Activity {
+public class LoginPage extends AppCompatActivity {
 
     private static final String TAG = "loginPage";
     private Button LogInButton, RegisterButton;
@@ -83,6 +83,7 @@ public class LoginPage extends Activity {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
+
     public void onStop(){
         super.onStop();
         if(mAuthListener != null) {
@@ -100,8 +101,10 @@ public class LoginPage extends Activity {
                 }
                 else if(task.isSuccessful()) {
                     Toast.makeText(LoginPage.this,"Register Successful",Toast.LENGTH_SHORT).show();
+                    Intent intentRegister = new Intent(LoginPage.this, Register.class);
+                    startActivity(intentRegister);}
                 }
-            }
+
 
         });
     }

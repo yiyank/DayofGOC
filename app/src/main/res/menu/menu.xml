@@ -4,17 +4,20 @@
 
     <item
         android:id="@+id/menuconference"
-        android:title="Conference Intro" />
+        android:title="Home" />
     <item
         android:id="@+id/menumap"
         android:title="Map" />
     <item
         android:id="@+id/menuprofilelist"
-        android:title="SmartProfile" />
+        android:title="Attendee List" />
     <item
         android:id="@+id/menuschedule"
-        android:title="Schedule"/>
+        android:title="Schedule" />
     <item
         android:id="@+id/menusurvey"
-        android:title="Survey" />
+        android:title="Log out" />
+    <item
+        android:id="@+id/menulogout"
+        android:title="Log out" />
 </menu>
