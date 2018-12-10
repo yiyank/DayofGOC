@@ -6,90 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".MapFragment">
 
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textViewRossMap"
-            android:layout_width="wrap_content"
-            android:layout_height="15dp"
-            android:layout_marginEnd="97dp"
-            android:layout_marginLeft="99dp"
-            android:layout_marginRight="97dp"
-            android:layout_marginStart="99dp"
-            android:layout_marginTop="55dp"
-            android:text="Ross School of Business Map"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/imageView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
 
-        <TextView
-            android:id="@+id/textViewAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginBottom="195dp"
-            android:layout_marginEnd="44dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="44dp"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="23dp"
-            android:text="Address: 701 Tappan Ave, Ann Arbor, MI 48109"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            <TextView
+                android:id="@+id/textViewRossMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ross School of Business Map"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="356dp"
-            android:layout_height="266dp"
-            android:layout_marginBottom="22dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/rosscampusmap"
-            app:layout_constraintBottom_toTopOf="@+id/textViewAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewRossMap" />
+            <TextView
+                android:id="@+id/textViewAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginEnd="44dp"
+                android:layout_marginRight="44dp"
+                android:text="Address: 701 Tappan Ave, Ann Arbor, MI 48109"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="362dp"
-            android:layout_height="162dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="8dp"
-            android:text="Parking:
-            Metered parking is available all around the Ross School. A few of these are coin meters; most of them accept credit cards. The rate is $1.60/hour for a maximum of four hours.
-            Visitors may also park in the Palmer Structure, located on Central Campus. Accessible (handicap) parking is available in all visitor parking facilities. City parking is also available a short walk from Central Campus."
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewAddress" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="356dp"
+                android:layout_height="266dp"
+                android:layout_gravity="center"
+                android:src="@drawable/rosscampusmap"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="10dp"/>
 
-        <Button
-            android:id="@+id/mapBtn"
-            android:layout_width="141dp"
-            android:layout_height="18dp"
-            android:layout_marginTop="6dp"
-            android:background="#ffcb05"
-            android:text="Off Campus Map"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textViewAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-    </android.support.constraint.ConstraintLayout>
+            <Button
+                android:id="@+id/mapBtn"
+                android:layout_width="178dp"
+                android:layout_height="37dp"
+                android:background="#ffcb05"
+                android:text="Off Campus Map"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="362dp"
+                android:layout_height="162dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="8dp"
+                android:text="Parking:\n\nMetered parking is available all around the Ross School. A few of these are coin meters; most of them accept credit cards. The rate is $1.60/hour for a maximum of four hours.\n\nVisitors may also park in the Palmer Structure, located on Central Campus. Accessible (handicap) parking is available in all visitor parking facilities. City parking is also available a short walk from Central Campus."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAddress" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
