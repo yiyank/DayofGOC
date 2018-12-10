@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.to426.dayofgoc">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA8bO_mG9a5B_L_Mu26tpghl3_aQ9D6gXw"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+
         <activity android:name=".FirstPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +38,7 @@
         <activity android:name=".Register" />
         <activity android:name=".UpdateProfile" />
         <activity android:name=".ConferenceIntro" />
+        <activity android:name=".MapActivity" />
     </application>
 
 </manifest>
