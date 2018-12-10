@@ -5,6 +5,7 @@
     android:id="@+id/Schedule_List"
     android:layout_width="380dp"
     android:layout_height="80dp"
+    android:dividerHeight="4px"
     tools:layout_editor_absoluteY="73dp">
 
     <TextView
