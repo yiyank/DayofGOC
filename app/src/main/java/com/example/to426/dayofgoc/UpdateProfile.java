@@ -7,8 +7,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -82,9 +84,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
             myRef.orderByChild("Email").equalTo(ue).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    //String ue = FirebaseAuth.getInstance().getCurrentUser().getEmail();
                     for (DataSnapshot datas1:dataSnapshot.getChildren()){
-                        //if(datas1.child("Email").getValue(String.class).equals(ue) ){
                             if(!editName.getText().toString().equals("")){
                                 datas1.child("Name").getRef().setValue(editName.getText().toString());
                             }
@@ -94,15 +94,12 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
                             if(!editIndustry.getSelectedItem().toString().equals("Please Choose One")){
                                 datas1.child("Industry").getRef().setValue(editIndustry.getSelectedItem().toString());
                             }
-                            if(!editLink.getText().toString().equals("")){
+                            if(!editLink.getText().toString().equals("http://")){
                                 datas1.child("Linkedin").getRef().setValue(editLink.getText().toString());
                             }
-
-
-                            //}else{ }
                         }
                     Toast.makeText(UpdateProfile.this,"Information Updated!",Toast.LENGTH_SHORT).show();
-                    Intent go = new Intent(UpdateProfile.this, ProfileFragment.class);
+                    Intent go = new Intent(UpdateProfile.this, ConferenceIntro.class);
                     startActivity(go);
 
                 }
@@ -111,18 +108,11 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
 
                 }
             });
-
-                uploadImage(ue);
-
-
-
+            uploadImage(ue);
         }  else if(v==select){
             selectImages();
         }
-
-
     }
-
 
     private void selectImages(){
         Intent select = new Intent();

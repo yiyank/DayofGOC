@@ -87,8 +87,14 @@ public class SmartProfile extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent linkedin = new Intent (Intent.ACTION_VIEW, Uri.parse(Linkforattendee));
-        startActivity(linkedin);
+        if(Linkforattendee.equals("Not Available")){
+            Toast.makeText(SmartProfile.this, "Website not available, sorry!", Toast.LENGTH_LONG).show();
+
+        }else{
+            Intent linkedin = new Intent (Intent.ACTION_VIEW, Uri.parse(Linkforattendee));
+            startActivity(linkedin);
+        }
+
     }
 
 }

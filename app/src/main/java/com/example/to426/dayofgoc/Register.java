@@ -1,11 +1,14 @@
 package com.example.to426.dayofgoc;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.AnyRes;
 import android.support.annotation.NonNull;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,11 +35,12 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Register extends Activity implements View.OnClickListener {
 
     private int PICK_IMAGE_REQUEST = 1;
-    private Button finish,upload,select;
+    private Button finish,select;
     private EditText editName, editLink, editOrganization;
     private Spinner editIndustry;
     private ImageView imageView;
@@ -64,7 +68,6 @@ public class Register extends Activity implements View.OnClickListener {
         ArrayAdapter<String> industryAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,industryChoices);
         editIndustry.setAdapter(industryAdapter);
         finish.setOnClickListener(this);
-        upload.setOnClickListener(this);
         select.setOnClickListener(this);
     }
 
@@ -95,10 +98,26 @@ public class Register extends Activity implements View.OnClickListener {
             myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    dataSnapshot.child("Name").getRef().setValue(editName.getText().toString());
-                    dataSnapshot.child("Organization").getRef().setValue(editOrganization.getText().toString());
-                    dataSnapshot.child("Industry").getRef().setValue(editIndustry.getSelectedItem().toString());
-                    dataSnapshot.child("Linkedin").getRef().setValue(editLink.getText().toString());
+                    if (editName.getText().toString().equals("")){
+                        dataSnapshot.child("Name").getRef().setValue("Attendee");
+                    }else{
+                        dataSnapshot.child("Name").getRef().setValue(editName.getText().toString());
+                    }
+                    if (editOrganization.getText().toString().equals("")){
+                        dataSnapshot.child("Organization").getRef().setValue("Organization");
+                    }else{
+                        dataSnapshot.child("Organization").getRef().setValue(editOrganization.getText().toString());
+                    }
+                    if (editIndustry.getSelectedItem().toString().equals("")){
+                        dataSnapshot.child("Industry").getRef().setValue("Please Choose One");
+                    }else{
+                        dataSnapshot.child("Industry").getRef().setValue(editIndustry.getSelectedItem().toString());
+                    }
+                    if (editLink.getText().toString().equals("http://")){
+                        dataSnapshot.child("Linkedin").getRef().setValue("Not Available");
+                    }else{
+                        dataSnapshot.child("Linkedin").getRef().setValue(editLink.getText().toString());
+                    }
                     dataSnapshot.child("Email").getRef().setValue(FirebaseAuth.getInstance().getCurrentUser().getEmail());
                     Toast.makeText(Register.this,"Profile Created!",Toast.LENGTH_SHORT).show();
                     Intent go = new Intent(Register.this, ConferenceIntro.class);
@@ -116,10 +135,7 @@ public class Register extends Activity implements View.OnClickListener {
         } else if(v==select){
             selectImages();
         }
-
-
     }
-
 
     private void selectImages(){
         Intent select = new Intent();
@@ -166,7 +182,24 @@ public class Register extends Activity implements View.OnClickListener {
                     }
                 });
         }else{
+            Uri uri = Uri.parse("android.resource://com.example.to426.dayofgoc/drawable/sample");
 
+            sRef.putFile(uri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    // Get a URL to the uploaded content
+                }
+            })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle unsuccessful uploads
+                            // ...
+                        }
+                    });
         }
     }
+
+
 }
