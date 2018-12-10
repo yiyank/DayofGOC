@@ -6,13 +6,13 @@
         android:icon="@drawable/home_icon"
         android:title="Home" />
     <item
-        android:id="@+id/menumap"
-        android:icon="@drawable/map_icon"
-        android:title="Map" />
-    <item
         android:id="@+id/menuschedule"
         android:icon="@drawable/schedule_icon"
         android:title="Schedule" />
+    <item
+        android:id="@+id/menumap"
+        android:icon="@drawable/map_icon"
+        android:title="Map" />
     <item
         android:id="@+id/menuprofile"
         android:icon="@drawable/profile_icon"
