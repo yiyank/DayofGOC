@@ -1,13 +1,19 @@
 package com.example.to426.dayofgoc;
 
 
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 
@@ -21,6 +27,7 @@ public class ScheduleFragment extends Fragment {
     private ArrayList<Events> GOCEvents;
     //This is the list of events for day two
     private ArrayList<Events> GOCEventsSecond;
+
 
     public ScheduleFragment() {
         // Required empty public constructor
@@ -74,6 +81,7 @@ public class ScheduleFragment extends Fragment {
         RecyclerViewSchedule rv2 = new RecyclerViewSchedule(GOCEventsSecond, getActivity());
         recyclerView.setAdapter(rv2);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
     }
 
     private void initEventsSecond(View scheduleview) {
@@ -103,3 +111,5 @@ public class ScheduleFragment extends Fragment {
     }
 
 }
+
+
