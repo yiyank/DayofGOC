@@ -5,114 +5,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SmartProfile"
-    tools:layout_editor_absoluteY="73dp">
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:id="@+id/EmailPlaceholder"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
-        android:gravity="center"
+        android:layout_width="186dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginBottom="22dp"
+        android:gravity="center_vertical"
         android:text="Email Placeholder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/OrganizationPlaceholder" />
+        app:layout_constraintBottom_toTopOf="@+id/linkedinbutton"
+        app:layout_constraintStart_toEndOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/OrganizationPlaceholder"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
+        android:layout_width="185dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="13dp"
+        android:gravity="center_vertical"
         android:text="Unknown"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IndustryPlaceholder" />
+        app:layout_constraintBottom_toTopOf="@+id/IndustryPlaceholder"
+        app:layout_constraintStart_toEndOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/NamePlaceholder"
-        android:layout_width="0dp"
+        android:layout_width="384dp"
         android:layout_height="49dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="Attendee"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ImagePlaceholder"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ImagePlaceholder"
         android:layout_width="253dp"
         android:layout_height="178dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/OrganizationPlaceholder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NamePlaceholder"
         tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/IndustryPlaceholder"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
+        android:layout_width="186dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
         android:text="Unknown"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImagePlaceholder" />
+        app:layout_constraintBottom_toTopOf="@+id/EmailPlaceholder"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="80dp"
         android:layout_height="26dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginBottom="18dp"
         android:text="Industry:"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImagePlaceholder" />
+        app:layout_constraintBottom_toTopOf="@+id/textView16"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="120dp"
         android:layout_height="26dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="14dp"
         android:text="Organization:"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IndustryPlaceholder" />
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/OrganizationPlaceholder"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="60dp"
         android:layout_height="28dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginBottom="148dp"
         android:text="Email:"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/linkedinbutton"
         android:layout_width="178dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
+        android:layout_marginBottom="32dp"
         android:background="#0077B5"
         android:scaleType="fitCenter"
         android:src="@drawable/linkedinlogo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -126,13 +135,13 @@
         android:layout_marginRight="132dp"
         android:layout_marginBottom="16dp"
         android:background="#ffcb05"
+        android:gravity="center"
         android:text="BACK"
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

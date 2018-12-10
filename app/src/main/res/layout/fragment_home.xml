@@ -43,19 +43,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The Tauber Institute for Global Operations hosts the must attend operations event of the year
-                 — Taubers’ Global Operations Conference, GOC. \n\nThe combination of global leaders in industry with
-                 top-ranked business and engineering faculty, GOC reflects the unparalleled resources the Tauber Institute
-                 offers today and symbolizes our unwavering commitment to the next generation of Operations leaders.\n\nHere’s
-                 what a past attendee had to say:\n     “The Tauber Global Operations Conference was a great experience to expand
-                 my understanding of how recent business and technology trends are impacting the operations and strategy of several
-                 major global companies. Also, it was a unique opportunity to expand my network and meet a very diverse and talented
-                 group of professionals that work across a wide range of global companies and industries.” - Jose Gomez, UCLA\n\n
-                 Experience two days where you will:\n&#8226;  Learn from award winning faculty from the College of Engineering and
-                 the Stephen M. Ross School of Business as well as leading operations experts.\n&#8226;  Discover
-                 forward-thinking panels discussing real world strategies transforming operations.\n&#8226;
-                 Hear from dynamic speakers + well-respected industry experts to learn from their experiences
-                 \n&#8226;  Network with leading + emerging operations leaders" />
+                android:text="The Tauber Institute for Global Operations hosts the must attend operations event of the year — Taubers’ Global Operations Conference, GOC. \n\nThe combination of global leaders in industry with top-ranked business and engineering faculty, GOC reflects the unparalleled resources the Tauber Institute offers today and symbolizes our unwavering commitment to the next generation of Operations leaders.\n\nHere’s what a past attendee had to say:\n     “The Tauber Global Operations Conference was a great experience to expand my understanding of how recent business and technology trends are impacting the operations and strategy of several major global companies. Also, it was a unique opportunity to expand my network and meet a very diverse and talented group of professionals that work across a wide range of global companies and industries.” - Jose Gomez, UCLA\n\nExperience two days where you will:\n&#8226;  Learn from award winning faculty from the College of Engineering and the Stephen M. Ross School of Business as well as leading experts in operations today.\n&#8226;  Discover forward-thinking panels discussing real world strategies implemented to transform operations.\n&#8226;  Hear dynamic speakers + respected industry experts.\n&#8226;  Network with leading + emerging operations leaders" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

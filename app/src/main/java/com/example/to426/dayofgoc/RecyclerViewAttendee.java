@@ -56,7 +56,7 @@ public class RecyclerViewAttendee extends RecyclerView.Adapter<RecyclerViewAtten
         viewHolder.org.setText(GOCAttendees.get(i).Organization);
         viewHolder.Layout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {Toast.makeText(mContext, GOCAttendees.get(i).Email, Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
                 Intent go = new Intent(mContext,SmartProfile.class);
                 go.putExtra("email_value",GOCAttendees.get(i).Email);
                 go.putExtra("name_value",GOCAttendees.get(i).Name);
