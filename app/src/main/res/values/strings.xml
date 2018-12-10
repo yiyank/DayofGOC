@@ -4,6 +4,8 @@
     <string name="tauber_institute_for_global_operations">Tauber Institute for Global Operations</string>
     <string name="welcome_to_the_global_operations_conference_2018">Welcome to the Global Operations Conference 2018!</string>
 
+    <string name="google_maps_API_key">AIzaSyA8bO_mG9a5B_L_Mu26tpghl3_aQ9D6gXw</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
