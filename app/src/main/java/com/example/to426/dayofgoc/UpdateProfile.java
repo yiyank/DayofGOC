@@ -94,7 +94,7 @@ public class UpdateProfile extends Activity implements View.OnClickListener {
                             if(!editIndustry.getSelectedItem().toString().equals("Please Choose One")){
                                 datas1.child("Industry").getRef().setValue(editIndustry.getSelectedItem().toString());
                             }
-                            if(!editLink.getText().toString().equals("http://")){
+                            if(!editLink.getText().toString().equals("http://linkedin.com/in/")){
                                 datas1.child("Linkedin").getRef().setValue(editLink.getText().toString());
                             }
                         }
